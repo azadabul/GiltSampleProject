@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends HelperClass{
 
-    @FindBy(css = ".already-a-member")
+    @FindBy(xpath = "//a[@class=\"already-a-member\"]")
     WebElement logInHere;
 
     @FindBy(css = "#login_email")
@@ -23,6 +23,7 @@ public class HomePage extends HelperClass{
     final int waitTime = 180;
 
     void logIn(){
+        waitForElement(waitTime,logInHere);
         logInHere.click();
         waitForElement(waitTime, email);
         email.sendKeys("jsaikat22@gmail.com");

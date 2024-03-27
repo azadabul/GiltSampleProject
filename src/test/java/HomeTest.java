@@ -16,7 +16,7 @@ public class HomeTest extends BaseClass{
 
     @AfterMethod
     void clean(){
-
+        driver.close();
     }
 
     @Test
